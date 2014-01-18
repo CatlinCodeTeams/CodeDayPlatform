@@ -16,7 +16,6 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioInputStream;
@@ -24,7 +23,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.DataLine;
 
-import plat.interfaces.Point;
+import plat.physics.Point;
 
 public class SimplestPen {
 	public final SimplePen simplePen;
@@ -291,8 +290,6 @@ public class SimplestPen {
 				throw new RuntimeException("Resource in notloadable");
 			}
 		}
-		Logger.logFINER("Preloaded sound");
-
 	}
 
 
