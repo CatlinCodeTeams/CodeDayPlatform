@@ -51,7 +51,7 @@ public class Platformer extends SimpleGraphics{
 		for (EntityInterface e: enemy_list){
 			e.draw(pen);
 		
-	}
+	}}
 
 
 }
