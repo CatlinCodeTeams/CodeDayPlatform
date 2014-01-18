@@ -23,17 +23,16 @@ public class Platformer extends SimpleGraphics{
 
 	@Override
 	public void start(SimplestPen pen) {
+		
+		enemy_list = new ArrayList<EntityInterface>();
+		
 		level=1;
 		AddDebug.runOne(pen);
 		for (int i = 0; i<10; i++){
-			
-			enemy_list = new ArrayList<EntityInterface>();
-
 			enemy_list.add(new Basic_Enemy(pen, 400, 300));
 			
 		}
 		
-		enemy_list = new ArrayList<EntityInterface>();
 	}
 
 	@Override

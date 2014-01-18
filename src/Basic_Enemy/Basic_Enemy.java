@@ -1,5 +1,6 @@
 package Basic_Enemy;
 
+import java.awt.Color;
 import java.util.Random;
 
 import janus.engine.pens.SimplestPen;
@@ -48,8 +49,8 @@ public class Basic_Enemy implements EntityInterface{
 	@Override
 	public void draw(SimplestPen pen) {
 
-
-		pen.drawCircle((int)this.location.x, (int)this.location.y, this.radius);
+		pen.setColor(new Color(255,255,255));
+		pen.fillCircle((int)this.location.x, (int)this.location.y, this.radius);
 		
 	}
 
