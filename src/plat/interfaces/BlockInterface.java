@@ -1,6 +1,8 @@
 package plat.interfaces;
+
+import plat.physics.Point;
+
 public interface BlockInterface {
-  public int xcoord ();
-  public int ycoord ();
+  public Point location ();
   public int type ();
 }
