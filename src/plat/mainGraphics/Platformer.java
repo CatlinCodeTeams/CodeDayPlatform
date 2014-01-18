@@ -4,7 +4,6 @@ import janus.engine.SimpleGraphics;
 import janus.engine.pens.SimplestPen;
 
 public class Platformer extends SimpleGraphics{
-
 	public Platformer() {
 		super(800, 600, "Plat");
 	}
