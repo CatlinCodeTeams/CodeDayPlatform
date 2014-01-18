@@ -4,14 +4,14 @@ import janus.engine.SimpleGraphics;
 import janus.engine.pens.SimplestPen;
 
 public class Platformer extends SimpleGraphics{
+	public static int level;
 	public Platformer() {
 		super(800, 600, "Plat");
 	}
 
 	@Override
 	public void start(SimplestPen pen) {
-		// TODO Auto-generated method stub
-		
+		level=1;
 	}
 
 	@Override
