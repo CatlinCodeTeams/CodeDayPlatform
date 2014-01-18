@@ -26,10 +26,10 @@ public class Platformer extends SimpleGraphics{
 		level=1;
 		AddDebug.runOne(pen);
 		for (int i = 0; i<10; i++){
-			int vx = rand.nextInt(800);
-			int vy = rand.nextInt(600);
 			
-			enemy_list.add(new Basic_Enemy(pen, vx, vy));
+			enemy_list = new ArrayList<EntityInterface>();
+
+			enemy_list.add(new Basic_Enemy(pen, 400, 300));
 			
 		}
 		
