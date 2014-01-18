@@ -23,6 +23,8 @@ public class Basic_Enemy implements EntityInterface{
 		this.location = new Point(x,y);
 		this.speed = new Vector(vx,vy);
 		
+		this.radius = 15;
+		
 	}
 	
 	@Override
