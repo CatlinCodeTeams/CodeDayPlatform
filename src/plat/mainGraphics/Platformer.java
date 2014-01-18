@@ -23,6 +23,8 @@ public class Platformer extends SimpleGraphics{
 	@Override
 	public void start(SimplestPen pen) {
 		
+		pen.setBackground(new Color(50,200,255));
+		
 		enemy_list = new ArrayList<EntityInterface>();
 		
 		level=1;
