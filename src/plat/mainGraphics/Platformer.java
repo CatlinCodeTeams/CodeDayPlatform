@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import Basic_Enemy.Basic_Enemy;
+import plat.debugTools.AddDebug;
 import plat.interfaces.EntityInterface;
 import janus.engine.SimpleGraphics;
 import janus.engine.pens.SimplestPen;
@@ -23,7 +24,7 @@ public class Platformer extends SimpleGraphics{
 	@Override
 	public void start(SimplestPen pen) {
 		level=1;
-		
+		AddDebug.runOne(pen);
 		for (int i = 0; i<10; i++){
 			int vx = rand.nextInt(800);
 			int vy = rand.nextInt(600);
@@ -45,6 +46,7 @@ public class Platformer extends SimpleGraphics{
 	}
 	@Override
 	public void draw(SimplestPen pen) {
+		AddDebug.runMult(pen);
 		pen.setColor(Color.RED);
 		pen.drawCircle(100, 100, 50);
 		
