@@ -9,7 +9,6 @@ import plat.physics.Vector;
 
 public class Basic_Enemy implements EntityInterface{
 	
-	Random rand = new Random();
 	
 	Point location;
 	Vector speed;
@@ -17,11 +16,13 @@ public class Basic_Enemy implements EntityInterface{
 
 	public Basic_Enemy(SimplestPen pen, int x, int y){
 		
+		Random rand = new Random();
+		
 		int vx = rand.nextInt(3)+1;
 		int vy = rand.nextInt(3)+1;
 		
-		this.location = new Point(x,y);
-		this.speed = new Vector(vx,vy);
+		location = new Point(x,y);
+		speed = new Vector(vx,vy);
 		
 		this.radius = 15;
 		
