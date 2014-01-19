@@ -19,7 +19,7 @@ public abstract class Fallable {
 			}
 		}
 		falling=true;
-		v.add(new Vector(0,.01));
+		v.add(new Vector(0,.1));
 		return v;
 	}
 }
