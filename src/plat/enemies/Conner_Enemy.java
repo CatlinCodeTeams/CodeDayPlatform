@@ -79,7 +79,6 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	public int top() {
 		return (int) position.y;
 	}
-<<<<<<< HEAD
 	@Override
 	public int lastLowerLeft() {
 		return 0;
@@ -90,7 +89,6 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	}
 	@Override
 	public int lastY() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	@Override
@@ -103,6 +101,3 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 		
 	}
 }
-=======
-}
->>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git

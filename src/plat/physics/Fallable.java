@@ -13,7 +13,6 @@ public abstract class Fallable {
 	public abstract void setY(int y);
 	public abstract Vector getVector();
 	public boolean falling=false;
-<<<<<<< HEAD
 	public int getX(){
 		return getLowerLeft();
 	}
@@ -23,10 +22,7 @@ public abstract class Fallable {
 	public int lastX(){
 		return lastLowerLeft();
 	}
-	public boolean connorFall(Hitable[] h){
-=======
 	public boolean connerFall(Hitable[] h){
->>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git
 		for(Hitable e:h){
 			if(this.bottom()>=e.top()&& this.top()<e.bottom() && !(this.getLowerRight()<e.getTopLeft() || this.getLowerLeft()>e.getTopRight())){
 				return false;
