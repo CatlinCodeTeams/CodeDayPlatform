@@ -64,7 +64,15 @@ public class Platformer extends SimpleGraphics {
 		for (Block b : block_list) {
 			b.update(pen);
 		}
+<<<<<<< HEAD
 
+=======
+		
+		if (pen.isKeyPressed('r')){
+			pen.restart();
+		}
+		
+>>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git
 	}
 
 	@Override
