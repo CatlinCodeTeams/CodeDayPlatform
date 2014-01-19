@@ -37,7 +37,7 @@ public class ReadXML
 					int x = Integer.parseInt( eElement.getAttribute( "x" ) );
 					int y = Integer.parseInt( eElement.getAttribute( "y" ) );
 					int type = Integer.parseInt( eElement.getAttribute( "type" ) );
-					blockList.add(new Block(x, y, type, blockList));
+					blockList.add(new Block(x * 40, y * 40, type, blockList));
 					
 				}
 			}
@@ -50,7 +50,7 @@ public class ReadXML
 
 					int x = Integer.parseInt( eElement.getAttribute( "x" ) );
 					int y = Integer.parseInt( eElement.getAttribute( "y" ) );
-					plr = new Player(x,y);
+					plr = new Player(x*40, y*40);
 					
 				}
 			}
