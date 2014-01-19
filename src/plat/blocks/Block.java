@@ -4,10 +4,11 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 import janus.engine.pens.SimplestPen;
+import plat.interfaces.BlockInterface;
 import plat.physics.Point;
 import plat.physics.Vector;
 
-public class Block {
+public class Block implements BlockInterface{
 
 	Vector speed;
 	Point location;
@@ -23,6 +24,15 @@ public class Block {
 		
 		this.color = new Color(0,200,0);
 
+
+	}
+	
+	public Point location(){
+		return this.location;
+	}
+	
+	public int type(){
+		return this.type();
 	}
 
 	public void update(SimplestPen pen) {
@@ -35,6 +45,14 @@ public class Block {
 		pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40);
 		
 
+		if (neighbors[1]==false)
+			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 90);
+		if (neighbors[3]==false)
+			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  0);
+		if (neighbors[5]==false)
+			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 180);
+		if (neighbors[7]==false)
+			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 270);
 		
 	}
 
