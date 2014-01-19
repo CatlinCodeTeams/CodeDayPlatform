@@ -33,6 +33,9 @@ public class Player extends Fallable implements PlayerInterface{
 		if(pen.isKeyPressed('d')){
 			this.right_key_press();
 		}
+		if(pen.isKeyPressed('w')){
+			this.up_key_press();
+		}
 		if (this.moving == false){
 			if (this.speed.horizontal >= 1 && this.speed.horizontal >=0.5){
 				
