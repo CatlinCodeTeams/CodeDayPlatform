@@ -21,6 +21,7 @@ public class Platformer extends SimpleGraphics {
 
 	public Platformer() {
 		super(800, 600, "Plat");
+		this.endProgramOnClose=true;
 	}
 
 	Random rand = new Random();

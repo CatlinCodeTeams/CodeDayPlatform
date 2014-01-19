@@ -1,10 +1,8 @@
 package plat.player;
 import janus.engine.pens.SimplestPen;
-import java.awt.Color;
-
+import plat.physics.Fallable;
 import plat.physics.Point;
 import plat.physics.Vector;
-import plat.physics.Fallable;;
 
 public class Player extends Fallable implements PlayerInterface {
 	Point location;
