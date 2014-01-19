@@ -18,7 +18,7 @@ public class Block implements BlockInterface,Hitable{
 
 	boolean[] neighbors = new boolean[9];
 	
-	public Block(int x, int y, ArrayList<Block> block_list){
+	public Block(int x, int y, int type, ArrayList<Block> block_list){
 		
 		this.location = new Point(x,y);
 		this.speed = new Vector (0,0);
@@ -98,7 +98,6 @@ public class Block implements BlockInterface,Hitable{
 				if ((b.location.x == this.location.x+40)&&(b.location.y == this.location.y))
 				{
 					neighbors[5] = true;
-					System.out.println("WHYYYYYYY");
 				}
 				
 				if ((b.location.x == this.location.x-40)&&(b.location.y == this.location.y+40))
