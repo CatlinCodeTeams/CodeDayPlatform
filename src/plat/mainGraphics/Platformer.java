@@ -69,7 +69,7 @@ public class Platformer extends SimpleGraphics {
 			b.render(block_list);
 		}*/
 		
-		ReadXML.Read("box.xml", block_list);
+		ReadXML.Read("box.xml", block_list, player);
 
 	}
 
