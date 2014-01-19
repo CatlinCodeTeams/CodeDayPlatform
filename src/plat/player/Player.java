@@ -1,6 +1,4 @@
 package plat.player;
-
-
 import janus.engine.pens.SimplestPen;
 import plat.physics.Fallable;
 import plat.physics.Point;

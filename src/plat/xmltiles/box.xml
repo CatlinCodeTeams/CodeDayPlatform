@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<map>
+<player x="2" y="2" type="0"/>
+<tile x="0" y="0" type="0" />
+<tile x="1" y="0" type="0" />
+<tile x="2" y="0" type="0" />
+<tile x="3" y="0" type="0" />
+<tile x="4" y="0" type="0" />
+<tile x="0" y="3" type="0" />
+<tile x="1" y="3" type="0" />
+<tile x="2" y="3" type="0" />
+<tile x="3" y="3" type="0" />
+<tile x="4" y="3" type="0" />
+<tile x="0" y="1" type="0" />
+<tile x="0" y="2" type="0" />
+<tile x="0" y="3" type="0" />
+<tile x="4" y="1" type="0" />
+<tile x="4" y="2" type="0" />
+<tile x="4" y="3" type="0" />
+<tile x="5" y="3" type="0" />
+
+</map>

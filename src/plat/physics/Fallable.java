@@ -23,4 +23,20 @@ public abstract class Fallable {
 		v.add(new Vector(0,.1));
 		return v;
 	}
+	public Vector collide(Hitable[] h){
+		Vector v=this.getVector();
+		for(Hitable e:h){
+			if(this.getLowerLeft()>e.getTopLeft()){
+				if(e.top()>=this.bottom() && e.top()<=this.top()){
+					v.horizontal=-v.horizontal+.1;
+				}
+			}
+			if(this.getLowerRight()>e.getTopRight()){
+				if(e.top()>=this.bottom() && e.top()<=this.top()){
+					v.horizontal=-v.horizontal+.1;
+				}
+			}
+		}
+		return v;	
+	}
 }
