@@ -15,6 +15,7 @@ import plat.enemies.*;
 import plat.interfaces.EntityInterface;
 import plat.player.Player;
 import plat.resource.sprites.ImgRegulator;
+import plat.xmltiles.ReadXML;
 
 public class Platformer extends SimpleGraphics {
 	public static int level;
@@ -56,17 +57,19 @@ public class Platformer extends SimpleGraphics {
 			enemy_list.add(new Basic_Enemy(pen, 400, 300));
 			enemy_list.add(new Conner_Enemy(400, 100));
 
-			block_list.add(new Block((40 * i)+80, 300, 0, block_list));
+			//block_list.add(new Block((40 * i)+80, 300, 0, block_list));
 
 		}
 		
-		for (int i=0; i<3; i++){
+	/*	for (int i=0; i<3; i++){
 			block_list.add(new Block(160+(i*40), 340, 0, block_list));
 		}
 		
 		for (Block b: block_list){
 			b.render(block_list);
-		}
+		}*/
+		
+		ReadXML.Read("box.xml", block_list);
 
 	}
 
@@ -102,6 +105,7 @@ public class Platformer extends SimpleGraphics {
 		Block[] b=new Block[block_list.size()];
 		block_list.toArray(b);
 		player.gravitate(b);
+		player.collide(b);
 		fps = pen.getActualFrameRate();
 		
 	}
