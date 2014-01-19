@@ -6,7 +6,7 @@ import plat.physics.Vector;
 import plat.blocks.*;
 import java.util.ArrayList;
 
-public interface EntityInterface {
+public interface EntityInterface{
 
 	public Point get_Point();
 
