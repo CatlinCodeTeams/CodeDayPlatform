@@ -1,12 +1,18 @@
 package plat.mainGraphics;
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import Basic_Enemy.Basic_Enemy;
+import javax.imageio.ImageIO;
+
 import plat.blocks.Block;
+import plat.enemies.Basic_Enemy;
 import plat.interfaces.EntityInterface;
+import plat.resource.sprites.ImgRegulator;
 import janus.engine.SimpleGraphics;
 import janus.engine.pens.SimplestPen;
 
@@ -22,11 +28,21 @@ public class Platformer extends SimpleGraphics{
 	ArrayList<Block> block_list = new ArrayList<Block>();
 	
 
+	private void loadImage(String name){
+		try {
+			this.imgs.put(name,ImageIO.read(ImgRegulator.class.getResource(name)));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	@Override
 	public void start(SimplestPen pen) {
 		
 		pen.setBackground(new Color(25,150,255));
-
+		
+		loadImage("main.png");
 		
 		level=1;
 		for (int i = 0; i<10; i++){

@@ -6,6 +6,8 @@ import janus.engine.pens.SimplestPen;
 import plat.physics.Point;
 import plat.physics.Vector;
 
+
+
 public class Block {
 	
 	Vector speed;

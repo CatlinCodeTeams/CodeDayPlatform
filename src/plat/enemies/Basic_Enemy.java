@@ -1,4 +1,4 @@
-package Basic_Enemy;
+package plat.enemies;
 
 import java.awt.Color;
 import java.util.Random;
