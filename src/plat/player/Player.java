@@ -13,8 +13,12 @@ public class Player extends Fallable implements PlayerInterface{
 	boolean in_air;
 	boolean moving;
 	String pic;
+	int last_der;
+	int top_speed;
 	
 	public Player(int x, int y){
+		last_der = 2;
+		top_speed = 5;
 		location = new Point(x,y);
 		speed = new Vector(0,0);
 		moving = false;
@@ -27,13 +31,18 @@ public class Player extends Fallable implements PlayerInterface{
 		this.location.move(this.speed);
 		this.moving = false;
 		if (this.falling == false){
+			this.top_speed = 5;}
+		else{
+			this.top_speed = 2;}
 			if(pen.isKeyPressed('a')){
 				this.left_key_press();
 				this.pic = "player_left.png";
+				this.last_der = 1;
 			}
 			if(pen.isKeyPressed('d')){
 				this.right_key_press();
 				this.pic = "player_right.png";
+				this.last_der = 2;
 			}
 			if(pen.isKeyPressed('w')){
 				this.up_key_press();
@@ -51,7 +60,7 @@ public class Player extends Fallable implements PlayerInterface{
 			}
 
 			
-		}
+		
 		if (this.speed.horizontal>5.0){
 			this.speed.horizontal = 5;
 		}
@@ -63,26 +72,30 @@ public class Player extends Fallable implements PlayerInterface{
 		pen.drawImage((String)this.pic,(int)this.location.x, (int)this.location.y,40,40);
 		
 	}
+	public void shoot(){
+		
+	}
 	@Override
 	public void left_key_press() {
-		this.speed.add(new Vector(-5,0));
+		this.speed.add(new Vector(-this.top_speed,0));
 		this.moving = true;
 		
 	}
 	@Override
 	public void right_key_press() {
-		this.speed.add(new Vector(5,0));
+		this.speed.add(new Vector(this.top_speed,0));
 		this.moving = true;
 	}
 	@Override
 	public void up_key_press() {
+		if (this.falling == false){
 		this.speed.add(new Vector(0,-2));
-		this.moving = true;
+		this.moving = true;}
 		
 	}
 	@Override
 	public void down_key_pess() {
-		this.speed.add(new Vector(0,5));
+		this.speed.add(new Vector(0,this.top_speed));
 		this.moving = true;
 	}
 

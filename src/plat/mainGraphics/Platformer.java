@@ -65,12 +65,16 @@ public class Platformer extends SimpleGraphics {
 			block_list.add(new Block(160+(i*40), 340, 0, block_list));
 		}
 		
-		for (Block b: block_list){
-			b.render(block_list);
+
 		}*/
 		
-		ReadXML.Read("box.xml", block_list, player);
 
+		ReadXML.Read("box.xml", block_list,player);
+
+
+		for (Block b: block_list){
+			b.render(block_list);
+		}
 	}
 
 	
