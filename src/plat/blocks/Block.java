@@ -109,7 +109,7 @@ public class Block implements BlockInterface,Hitable{
 					neighbors[4] = true;
 				}
 				
-				if ((b.location.x == this.location.x+40)&&(b.location.y == this.location.y))
+				if ((b.location.x-40 == this.location.x)&&(b.location.y == this.location.y))
 				{
 					neighbors[5] = true;
 				}
