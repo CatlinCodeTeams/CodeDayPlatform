@@ -4,10 +4,11 @@ import janus.engine.pens.SimplestPen;
 
 import java.awt.Color;
 
+import plat.physics.Fallable;
 import plat.physics.Point;
 import plat.physics.Vector;
 
-public class Player implements PlayerInterface {
+public class Player extends Fallable implements PlayerInterface {
 	Point location;
 	Vector speed;
 	int width;
@@ -47,6 +48,22 @@ public class Player implements PlayerInterface {
 	@Override
 	public void down_key_pess() {
 		
+	}
+	@Override
+	public int getLowerLeft() {
+		return (int) location.getIntX();
+	}
+	@Override
+	public int getLowerRight() {
+		return (int) location.getIntX()+40;
+	}
+	@Override
+	public int height() {
+		return 40;
+	}
+	@Override
+	public Vector getVector() {
+		return speed;
 	}
 }
 
