@@ -15,6 +15,9 @@ public class Player extends Fallable implements PlayerInterface{
 	String pic;
 	int last_der;
 	int top_speed;
+	int lx;
+	int lx2;
+	int ly;
 	
 	public Player(int x, int y){
 		last_der = 2;
@@ -27,11 +30,14 @@ public class Player extends Fallable implements PlayerInterface{
 		pic = "player_front.png";
 	}
 	public void update(SimplestPen pen){
-		
+		ly=(int) location.y;
+		lx=(int) location.x;
+		lx2=(int) location.x+40;
 		this.location.move(this.speed);
 		this.moving = false;
 		if (this.falling == false){
-			this.top_speed = 5;}
+			this.top_speed = 5;
+		}
 		else{
 			this.top_speed = 2;}
 			if(pen.isKeyPressed('a')){
@@ -121,5 +127,25 @@ public class Player extends Fallable implements PlayerInterface{
 	@Override
 	public int top() {
 		return (int)location.y;
+	}
+	@Override
+	public int lastLowerLeft() {
+		return lx;
+	}
+	@Override
+	public int lastLowerRight() {
+		return lx2;
+	}
+	@Override
+	public int lastY() {
+		return ly;
+	}
+	@Override
+	public void setX(int x) {
+		location.x=x;
+	}
+	@Override
+	public void setY(int y) {
+		location.y=y;
 	}
 }

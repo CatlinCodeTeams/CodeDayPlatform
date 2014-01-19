@@ -64,4 +64,26 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	public int top() {
 		return (int) position.y;
 	}
+	@Override
+	public int lastLowerLeft() {
+		return 0;
+	}
+	@Override
+	public int lastLowerRight() {
+		return 0;
+	}
+	@Override
+	public int lastY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public void setX(int x) {
+		position.x=x;
+	}
+	@Override
+	public void setY(int y) {
+		position.y=y;
+		
+	}
 }
