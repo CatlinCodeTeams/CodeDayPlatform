@@ -3,6 +3,8 @@ package plat.interfaces;
 import janus.engine.pens.SimplestPen;
 import plat.physics.Point;
 import plat.physics.Vector;
+import plat.blocks.*;
+import java.util.ArrayList;
 
 public interface EntityInterface {
 
@@ -10,7 +12,7 @@ public interface EntityInterface {
 
 	public Vector get_Vector();
 
-	public void update(SimplestPen pen);
+	public void update(SimplestPen pen, ArrayList<Block> blockList);
 
 	public void draw(SimplestPen pen);
 }
