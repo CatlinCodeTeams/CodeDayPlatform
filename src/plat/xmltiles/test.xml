@@ -1,12 +1,34 @@
 <?xml version="1.0"?>
 
 <map>
-	<tile x="2" y="3" type="2" />
-	<tile x="2" y="3" type="3" />
-	<tile x="2" y="3" type="5" />
-	<tile x="2" y="3" type="6" />
-	<tile x="2" y="3" type="2235" />
-	<tile x="2" y="3" type="buns" />
-	<tile x="2" y="3" type="hueahe" />
-	<tile x="2" y="3" type="lel" />
+<tile x="0" y="0" type="0" />
+<tile x="0" y="1" type="0" />
+<tile x="0" y="2" type="0" />
+<tile x="0" y="3" type="0" />
+<tile x="0" y="4" type="0" />
+<tile x="0" y="5" type="0" />
+<tile x="0" y="6" type="0" />
+<tile x="0" y="7" type="0" />
+<tile x="0" y="8" type="0" />
+<tile x="0" y="9" type="0" />
+<tile x="0" y="10" type="0" />
+<tile x="0" y="11" type="0" />
+<tile x="0" y="12" type="0" />
+<tile x="0" y="13" type="0" />
+<tile x="0" y="14" type="0" />
+<tile x="0" y="15" type="0" />
+<tile x="0" y="16" type="0" />
+<tile x="0" y="17" type="0" />
+<tile x="0" y="18" type="0" />
+<tile x="0" y="19" type="0" />
+<tile x="0" y="20" type="0" />
+<tile x="0" y="21" type="0" />
+<tile x="0" y="22" type="0" />
+<tile x="0" y="23" type="0" />
+<tile x="0" y="24" type="0" />
+<tile x="0" y="25" type="0" />
+<tile x="0" y="26" type="0" />
+<tile x="0" y="27" type="0" />
+<tile x="0" y="28" type="0" />
+<tile x="0" y="29" type="0" />
 </map>
