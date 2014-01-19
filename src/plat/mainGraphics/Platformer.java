@@ -102,6 +102,7 @@ public class Platformer extends SimpleGraphics {
 		Block[] b=new Block[block_list.size()];
 		block_list.toArray(b);
 		player.gravitate(b);
+		player.collide(b);
 		fps = pen.getActualFrameRate();
 		
 	}
