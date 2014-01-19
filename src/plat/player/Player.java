@@ -1,11 +1,13 @@
-
 package plat.player;
 import janus.engine.pens.SimplestPen;
 import plat.physics.Fallable;
 import plat.physics.Point;
 import plat.physics.Vector;
+import plat.physics.Fallable;
+import plat.interfaces.EntityInterface;
 
-public class Player extends Fallable implements PlayerInterface {
+
+public class Player extends Fallable implements PlayerInterface{
 	Point location;
 	Vector speed;
 	int width;
@@ -30,6 +32,9 @@ public class Player extends Fallable implements PlayerInterface {
 		}
 		if(pen.isKeyPressed('d')){
 			this.right_key_press();
+		}
+		if(pen.isKeyPressed('w')){
+			this.up_key_press();
 		}
 		if (this.moving == false){
 			if (this.speed.horizontal >= 1 && this.speed.horizontal >=0.5){
