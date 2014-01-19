@@ -41,8 +41,7 @@ public class ReadXML
 			}
 			for (int n = 0; n < blockList.size(); n++)
 			{
-				System.out.println( "" );
-				// blockList.get(0).render
+				blockList.get(n).render(blockList);
 			}
 		}
 		
