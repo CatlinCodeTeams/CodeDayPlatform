@@ -4,9 +4,10 @@ import java.awt.Color;
 
 import plat.physics.Point;
 import plat.physics.Vector;
-import plat.physics.Fallable;;
+import plat.physics.Fallable;
+import plat.interfaces.EntityInterface;
 
-public class Player extends Fallable implements PlayerInterface {
+public class Player extends Fallable implements EntityInterface{
 	Point location;
 	Vector speed;
 	int width;
