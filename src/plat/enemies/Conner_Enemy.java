@@ -46,18 +46,24 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	}
 	
 	public int bottom() {
-		return (int) position.y - height;
+		return (int) position.y + height;
 	}
 
 	public void update(SimplestPen pen, ArrayList<Block> blockList) {
 		Block[] b = new Block[blockList.size()];
 		blockList.toArray(b);
 		velocity = gravitate (b);
+		for (Block block : b) {
+			if (getLowerRight () >= block.getTopLeft() && getLowerRight () <= block.getTopRight()) {
+				
+			}
+		}
+		position.move(velocity);
 	}
 
 	public void draw(SimplestPen pen) {
-		pen.setColor(new Color(255, 255, 255));
-		pen.fillCircle((int) this.position.x, (int) this.position.y,
+		pen.setColor(new Color(0, 255, 255));
+		pen.fillCircle((int) this.position.x, (int) this.position.y + height/2,
 		20);
 	}
 }
