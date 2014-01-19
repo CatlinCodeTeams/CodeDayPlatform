@@ -17,12 +17,18 @@ public class Block implements BlockInterface{
 
 	boolean[] neighbors = new boolean[9];
 	
-	public Block(SimplestPen pen, int x, int y){
+	public Block(SimplestPen pen, int x, int y, ArrayList<Block> block_list){
 		
 		this.location = new Point(x,y);
 		this.speed = new Vector (0,0);
 		
 		this.color = new Color(0,200,0);
+		
+		for (int k=0; k<9; k++){
+			neighbors[k] = false;
+		}
+		
+		this.render(pen, block_list);
 
 
 	}
@@ -42,17 +48,17 @@ public class Block implements BlockInterface{
 
 	public void draw(SimplestPen pen){
 
-		pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40);
+		pen.drawImage("main.png", (int)this.location.x, (int)this.location.y, 40, 40);
 		
 
 		if (neighbors[1]==false)
 			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 90);
 		if (neighbors[3]==false)
 			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  0);
-		if (neighbors[5]==false)
-			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 180);
-		if (neighbors[7]==false)
-			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 270);
+		if (neighbors[7]==false){
+			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  270);
+			pen.drawImage("grass_bottom.png", (int)this.location.x, (int)this.location.y+40, 40, 40,  0);
+		}
 		
 	}
 
@@ -73,18 +79,22 @@ public class Block implements BlockInterface{
 				{
 					neighbors[2] = true;
 				}
+				
 				if ((b.location.x == this.location.x-40)&&(b.location.y == this.location.y))
 				{
 					neighbors[3] = true;
 				}
+				
 				if ((b.location.x == this.location.x)&&(b.location.y == this.location.y))
 				{
 					neighbors[4] = true;
 				}
+				
 				if ((b.location.x == this.location.x+40)&&(b.location.y == this.location.y))
 				{
 					neighbors[5] = true;
 				}
+				
 				if ((b.location.x == this.location.x-40)&&(b.location.y == this.location.y+40))
 				{
 					neighbors[6] = true;
