@@ -46,4 +46,13 @@
 	<tile x="11" y="8" type="0" />
 	<tile x="11" y="9" type="0" />
 	<tile x="11" y="10" type="0" />
+	<tile x="0" y="20" type="0" />
+	<tile x="1" y="20" type="0" />
+	<tile x="2" y="20" type="0" />
+	<tile x="3" y="20" type="0" />
+	<tile x="4" y="20" type="0" />
+	<tile x="5" y="20" type="0" />
+	<tile x="6" y="20" type="0" />
+	<tile x="7" y="20" type="0" />
+	<tile x="8" y="20" type="0" />
 </map>
