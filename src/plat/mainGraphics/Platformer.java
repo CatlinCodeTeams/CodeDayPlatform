@@ -76,7 +76,6 @@ public class Platformer extends SimpleGraphics {
 	
 	@Override
 	public void update(SimplestPen pen) {
-
 		for (EntityInterface e : enemy_list) {
 			e.update(pen);
 		}
@@ -89,6 +88,9 @@ public class Platformer extends SimpleGraphics {
 		if (pen.isKeyPressed('r')){
 			pen.restart();
 		}
+		Block[] b=new Block[block_list.size()];
+		block_list.toArray(b);
+		player.gravitate(b);
 	}
 
 	@Override

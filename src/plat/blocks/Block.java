@@ -121,7 +121,7 @@ public class Block implements BlockInterface,Hitable{
 
 	@Override
 	public int getTopRight() {
-		return (int)location.y;
+		return (int)location.x+40;
 	}
 
 	@Override
