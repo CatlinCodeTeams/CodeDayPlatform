@@ -16,6 +16,7 @@ public class Block implements BlockInterface,Hitable{
 
 	Color color;
 
+
 	boolean[] neighbors = new boolean[9];
 	public Block(int x, int y, int type){
 		
@@ -27,6 +28,7 @@ public class Block implements BlockInterface,Hitable{
 		for (int k=0; k<9; k++){
 			neighbors[k] = false;
 		}
+
 
 
 	}
