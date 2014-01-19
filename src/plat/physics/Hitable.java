@@ -5,4 +5,5 @@ public interface Hitable {
 	public int getTopRight();
 	public int height();
 	public int top();
+	public int bottom();
 }
