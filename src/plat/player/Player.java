@@ -88,8 +88,9 @@ public class Player extends Fallable implements PlayerInterface{
 	}
 	@Override
 	public void up_key_press() {
+		if (this.falling == false){
 		this.speed.add(new Vector(0,-2));
-		this.moving = true;
+		this.moving = true;}
 		
 	}
 	@Override
