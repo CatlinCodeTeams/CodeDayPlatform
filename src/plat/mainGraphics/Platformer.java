@@ -1,11 +1,18 @@
 package plat.mainGraphics;
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import Basic_Enemy.Basic_Enemy;
+import javax.imageio.ImageIO;
+
+import plat.blocks.Block;
+import plat.enemies.Basic_Enemy;
 import plat.interfaces.EntityInterface;
+import plat.resource.sprites.ImgRegulator;
 import janus.engine.SimpleGraphics;
 import janus.engine.pens.SimplestPen;
 
@@ -17,21 +24,34 @@ public class Platformer extends SimpleGraphics{
 	
 	Random rand = new Random();
 	
-	ArrayList<EntityInterface> enemy_list;
+	ArrayList<EntityInterface> enemy_list = new ArrayList<EntityInterface>();
+	ArrayList<Block> block_list = new ArrayList<Block>();
 	
 
+	private void loadImage(String name){
+		try {
+			this.imgs.put(name,ImageIO.read(ImgRegulator.class.getResource(name)));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	@Override
 	public void start(SimplestPen pen) {
 		
-		pen.setBackground(new Color(50,200,255));
+		pen.setBackground(new Color(25,150,255));
 		
-		enemy_list = new ArrayList<EntityInterface>();
+		loadImage("main.png");
 		
 		level=1;
 		for (int i = 0; i<10; i++){
 			enemy_list.add(new Basic_Enemy(pen, 400, 300));
 			
+			block_list.add(new Block(pen, 40*i, 0));
+			
 		}
+		
 		
 	}
 
@@ -42,16 +62,20 @@ public class Platformer extends SimpleGraphics{
 			e.update(pen);
 		}
 		
+		for (Block b: block_list){
+			b.update(pen);
+		}
+		
 	}
 	@Override
 	public void draw(SimplestPen pen) {
-		pen.setColor(Color.RED);
-		pen.drawCircle(100, 100, 50);
 		
 		for (EntityInterface e: enemy_list){
 			e.draw(pen);
-		
-	}}
+		}
+		for (Block b: block_list){
+			b.draw(pen);
+		}
 
 
-}
+}}

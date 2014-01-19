@@ -1,4 +1,4 @@
-package Basic_Enemy;
+package plat.enemies;
 
 import java.awt.Color;
 import java.util.Random;
@@ -19,8 +19,8 @@ public class Basic_Enemy implements EntityInterface{
 		
 		Random rand = new Random();
 		
-		int vx = rand.nextInt(3)+1;
-		int vy = rand.nextInt(3)+1;
+		int vx = rand.nextInt(10)-10;
+		int vy = rand.nextInt(10)-10;
 		
 		location = new Point(x,y);
 		speed = new Vector(vx,vy);
