@@ -18,6 +18,7 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	
 	public Conner_Enemy (int xStart, int yStart) {
 		position = new Point (xStart, yStart);
+		velocity = new Vector (0, 0);
 		height = 40;
 		width = 40;
 	}
