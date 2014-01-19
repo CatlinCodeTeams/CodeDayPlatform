@@ -99,7 +99,7 @@ public class Block implements BlockInterface,Hitable{
 			pen.drawImage("grass_corner.png", (int)this.location.x, (int)this.location.y, 40, 40,  270);
 		}
 		
-		
+		System.out.println("OLOLOL");
 	}
 
 
