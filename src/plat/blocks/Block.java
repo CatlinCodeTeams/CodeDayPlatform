@@ -17,7 +17,19 @@ public class Block implements BlockInterface,Hitable{
 	Color color;
 
 	boolean[] neighbors = new boolean[9];
-	
+	public Block(int x, int y, int type){
+		
+		this.location = new Point(x,y);
+		this.speed = new Vector (0,0);
+		
+		this.color = new Color(0,200,0);
+		
+		for (int k=0; k<9; k++){
+			neighbors[k] = false;
+		}
+
+
+	}
 	public Block(int x, int y, int type, ArrayList<Block> block_list){
 		
 		this.location = new Point(x,y);
@@ -51,9 +63,14 @@ public class Block implements BlockInterface,Hitable{
 
 		pen.drawImage("main.png", (int)this.location.x, (int)this.location.y, 40, 40);
 		
-
-		if (neighbors[1]==false)
+		if (neighbors[5]==false){
+			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  180);
+		}
+		
+		if (neighbors[1]==false){
 			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 90);
+			pen.drawImage("grass_top.png", (int)this.location.x, (int)this.location.y-40, 40, 40, 0);
+		}
 		if (neighbors[3]==false)
 			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  0);
 		if (neighbors[7]==false){
@@ -61,9 +78,6 @@ public class Block implements BlockInterface,Hitable{
 			pen.drawImage("grass_bottom.png", (int)this.location.x, (int)this.location.y+40, 40, 40,  0);
 		}
 		
-		if (neighbors[5]==true){
-			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  180);
-		}
 		
 	}
 
