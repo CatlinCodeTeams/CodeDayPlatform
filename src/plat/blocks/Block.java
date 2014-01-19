@@ -18,7 +18,7 @@ public class Block implements BlockInterface,Hitable{
 
 	boolean[] neighbors = new boolean[9];
 	
-	public Block(SimplestPen pen, int x, int y, ArrayList<Block> block_list){
+	public Block(int x, int y, int type, ArrayList<Block> block_list){
 		
 		this.location = new Point(x,y);
 		this.speed = new Vector (0,0);
@@ -29,7 +29,7 @@ public class Block implements BlockInterface,Hitable{
 			neighbors[k] = false;
 		}
 		
-		this.render(pen, block_list);
+		this.render(block_list);
 
 
 	}
@@ -61,10 +61,14 @@ public class Block implements BlockInterface,Hitable{
 			pen.drawImage("grass_bottom.png", (int)this.location.x, (int)this.location.y+40, 40, 40,  0);
 		}
 		
+		if (neighbors[5]==true){
+			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  180);
+		}
+		
 	}
 
 
-	private void render(SimplestPen pen, ArrayList<Block> block_list){
+	private void render(ArrayList<Block> block_list){
 		
 		for (Block b: block_list){
 			if (b != this){
