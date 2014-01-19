@@ -26,8 +26,8 @@ public class Platformer extends SimpleGraphics {
 
 	Random rand = new Random();
 
-	ArrayList<EntityInterface> enemy_list = new ArrayList<EntityInterface>();
-	ArrayList<Block> block_list = new ArrayList<Block>();
+	ArrayList<EntityInterface> enemy_list;
+	ArrayList<Block> block_list;
 	Player player;
 
 	private void loadImage(String name) {
@@ -42,7 +42,8 @@ public class Platformer extends SimpleGraphics {
 
 	@Override
 	public void start(SimplestPen pen) {
-
+		enemy_list = new ArrayList<EntityInterface>();
+		block_list = new ArrayList<Block>();
 		load_images();
 		
 		pen.setBackground(new Color(25,150,255));
