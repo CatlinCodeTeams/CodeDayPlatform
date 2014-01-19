@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package plat.enemies;
 
 import plat.interfaces.*;
@@ -7,3 +8,6 @@ class Conner_Enemy implements EntityInterface {
 		
 	}
 }
+=======
+package plat.enemies;
+>>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git
