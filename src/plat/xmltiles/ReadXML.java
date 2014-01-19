@@ -15,7 +15,7 @@ public class ReadXML
 {
 	public ReadXML()
 	{
-		// CUMSTRUCTURE
+		// CUMSTRU
 	}
 	public static void Read( String XmlFile, ArrayList<Block> blockList, Player plr )
 	{		
