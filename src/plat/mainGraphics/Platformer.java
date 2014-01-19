@@ -86,7 +86,7 @@ public class Platformer extends SimpleGraphics {
 	@Override
 	public void update(SimplestPen pen) {
 		for (EntityInterface e : enemy_list) {
-			e.update(pen, enemy_list);
+			e.update(pen, block_list);
 		}
 
 		for (Block b : block_list) {
