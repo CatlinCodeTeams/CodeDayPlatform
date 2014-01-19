@@ -55,7 +55,7 @@ public class Platformer extends SimpleGraphics {
 		level=1;
 		for (int i = 0; i < 10; i++) {
 			enemy_list.add(new Basic_Enemy(pen, 400, 300));
-			enemy_list.add(new Conner_Enemy(400, 100));
+			enemy_list.add(new Conner_Enemy(225, 50));
 
 			//block_list.add(new Block((40 * i)+80, 300, 0, block_list));
 
