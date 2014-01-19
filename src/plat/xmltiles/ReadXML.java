@@ -8,6 +8,7 @@ import org.w3c.dom.Element;
 import java.io.File;
 import java.util.ArrayList;
 import plat.blocks.Block;
+import plat.player.Player;
 
 // import plat.xmltiles.ReadXML;
 public class ReadXML
@@ -16,7 +17,7 @@ public class ReadXML
 	{
 		// CONSTRUCTOR
 	}
-	public static void Read( String XmlFile, ArrayList<Block> blockList )
+	public static void Read( String XmlFile, ArrayList<Block> blockList, Player plr )
 	{		
 		try {
 			
@@ -40,10 +41,20 @@ public class ReadXML
 					
 				}
 			}
-			for (int n = 0; n < blockList.size(); n++)
-			{
-				blockList.get(n).render(blockList);
+			
+			NodeList pList = doc.getElementsByTagName("player");
+			for (int n = 0; n < pList.getLength(); n++) {
+				Node pNode = pList.item(n);							// The list of the nodes in the tag
+				if (pNode.getNodeType() == Node.ELEMENT_NODE) {		// Make sure it is a node
+					Element eElement = (Element) pNode;				// Return the element as var eElement
+
+					int x = Integer.parseInt( eElement.getAttribute( "x" ) );
+					int y = Integer.parseInt( eElement.getAttribute( "y" ) );
+					plr = new Player(x,y);
+					
+				}
 			}
+
 		}
 		
 	    catch (Exception e) {
