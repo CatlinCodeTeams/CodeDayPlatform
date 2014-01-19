@@ -6,6 +6,8 @@ import janus.engine.pens.SimplestPen;
 import plat.physics.Point;
 import plat.physics.Vector;
 
+
+
 public class Block {
 	
 	Vector speed;
@@ -33,6 +35,8 @@ public class Block {
 		
 		pen.setColor(Color.BLACK);
 		pen.drawRectangle((int)this.location.x, (int)this.location.y, 40,40);
+		
+		pen.drawImage("main.png", (int)this.location.x, (int)this.location.y, 40, 40);
 	}
 
 }
