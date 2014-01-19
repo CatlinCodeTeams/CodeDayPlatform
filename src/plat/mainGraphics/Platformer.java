@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import Basic_Enemy.Basic_Enemy;
-import plat.debugTools.AddDebug;
+import plat.blocks.Block;
 import plat.interfaces.EntityInterface;
 import janus.engine.SimpleGraphics;
 import janus.engine.pens.SimplestPen;
@@ -18,22 +18,25 @@ public class Platformer extends SimpleGraphics{
 	
 	Random rand = new Random();
 	
-	ArrayList<EntityInterface> enemy_list;
+	ArrayList<EntityInterface> enemy_list = new ArrayList<EntityInterface>();
+	ArrayList<Block> block_list = new ArrayList<Block>();
 	
 
 	@Override
 	public void start(SimplestPen pen) {
+		
+		pen.setBackground(new Color(25,150,255));
+
+		
 		level=1;
-		AddDebug.runOne(pen);
 		for (int i = 0; i<10; i++){
-			int vx = rand.nextInt(800);
-			int vy = rand.nextInt(600);
+			enemy_list.add(new Basic_Enemy(pen, 400, 300));
 			
-			enemy_list.add(new Basic_Enemy(pen, vx, vy));
+			block_list.add(new Block(pen, 40*i, 0));
 			
 		}
 		
-		enemy_list = new ArrayList<EntityInterface>();
+		
 	}
 
 	@Override
@@ -43,17 +46,20 @@ public class Platformer extends SimpleGraphics{
 			e.update(pen);
 		}
 		
+		for (Block b: block_list){
+			b.update(pen);
+		}
+		
 	}
 	@Override
 	public void draw(SimplestPen pen) {
-		AddDebug.runMult(pen);
-		pen.setColor(Color.RED);
-		pen.drawCircle(100, 100, 50);
 		
 		for (EntityInterface e: enemy_list){
 			e.draw(pen);
-		
-	}}
+		}
+		for (Block b: block_list){
+			b.draw(pen);
+		}
 
 
-}
+}}

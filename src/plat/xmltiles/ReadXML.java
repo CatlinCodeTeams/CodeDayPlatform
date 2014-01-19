@@ -7,13 +7,18 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
 
+// import plat.xmltiles.ReadXML;
 public class ReadXML
 {
-	public ReadXML( String XmlFile )
+	public ReadXML()
 	{
-		File xmlFile = new File( XmlFile );
-		
+		// CONSTRUCTOR
+	}
+	public static void Read( String XmlFile )
+	{		
 		try {
+			
+			File xmlFile = new File( ReadXML.class.getResource( XmlFile ).toURI() );
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(xmlFile);
@@ -26,8 +31,7 @@ public class ReadXML
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {		// Make sure it is a node
 					Element eElement = (Element) nNode;				// Return the element as var eElement
 					
-					System.out.println("Staff id : " + eElement.getAttribute("id"));
-					
+					System.out.println("The tile type is: " + eElement.getAttribute("type"));	// TEMP
 				}
 			}
 		}

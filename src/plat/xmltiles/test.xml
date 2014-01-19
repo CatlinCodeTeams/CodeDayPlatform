@@ -2,4 +2,12 @@
 
 <map>
 	<tile x="2" y="3" type="2" />
+	<tile x="2" y="3" type="3" />
+	<tile x="2" y="3" type="5" />
+	<tile x="2" y="3" type="6" />
+	<tile x="2" y="3" type="2235" />
+	<tile x="2" y="3" type="buns" />
+	<tile x="2" y="3" type="hueahe" />
+	<tile x="2" y="3" type="lel" />
+	
 </map>

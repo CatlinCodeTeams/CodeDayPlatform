@@ -1,5 +1,6 @@
 package Basic_Enemy;
 
+import java.awt.Color;
 import java.util.Random;
 
 import janus.engine.pens.SimplestPen;
@@ -9,7 +10,6 @@ import plat.physics.Vector;
 
 public class Basic_Enemy implements EntityInterface{
 	
-	Random rand = new Random();
 	
 	Point location;
 	Vector speed;
@@ -17,11 +17,13 @@ public class Basic_Enemy implements EntityInterface{
 
 	public Basic_Enemy(SimplestPen pen, int x, int y){
 		
-		int vx = rand.nextInt(3)+1;
-		int vy = rand.nextInt(3)+1;
+		Random rand = new Random();
 		
-		this.location = new Point(x,y);
-		this.speed = new Vector(vx,vy);
+		int vx = rand.nextInt(10)-10;
+		int vy = rand.nextInt(10)-10;
+		
+		location = new Point(x,y);
+		speed = new Vector(vx,vy);
 		
 		this.radius = 15;
 		
@@ -47,8 +49,8 @@ public class Basic_Enemy implements EntityInterface{
 	@Override
 	public void draw(SimplestPen pen) {
 
-
-		pen.drawCircle((int)this.location.x, (int)this.location.y, this.radius);
+		pen.setColor(new Color(255,255,255));
+		pen.fillCircle((int)this.location.x, (int)this.location.y, this.radius);
 		
 	}
 
