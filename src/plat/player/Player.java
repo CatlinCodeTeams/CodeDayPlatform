@@ -93,4 +93,7 @@ public class Player extends Fallable implements PlayerInterface {
 	public Vector getVector() {
 		return this.speed;
 	}
+	public int bottom(){
+		return (int)location.y-40;
+	}
 }
