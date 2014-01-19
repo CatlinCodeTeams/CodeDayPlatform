@@ -66,4 +66,8 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 		pen.fillCircle((int) this.position.x, (int) this.position.y + height/2,
 		20);
 	}
+	@Override
+	public int top() {
+		return (int) position.y;
+	}
 }

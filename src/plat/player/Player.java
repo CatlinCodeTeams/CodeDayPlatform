@@ -1,14 +1,8 @@
 package plat.player;
-import java.util.ArrayList;
-
 import janus.engine.pens.SimplestPen;
 import plat.physics.Fallable;
 import plat.physics.Point;
 import plat.physics.Vector;
-import plat.physics.Fallable;
-import plat.blocks.Block;
-import plat.interfaces.EntityInterface;
-
 
 public class Player extends Fallable implements PlayerInterface{
 	Point location;
@@ -31,24 +25,24 @@ public class Player extends Fallable implements PlayerInterface{
 		this.location.move(this.speed);
 		this.moving = false;
 		if (this.falling == false){
-		if(pen.isKeyPressed('a')){
-			this.left_key_press();
-		}
-		if(pen.isKeyPressed('d')){
-			this.right_key_press();
-		}
-		if(pen.isKeyPressed('w')){
-			this.up_key_press();
-		}
-		if (this.moving == false){
-			if (this.speed.horizontal >= 1 && this.speed.horizontal >=0.5){
-				
-			this.speed.horizontal = this.speed.horizontal*.5;
+			if(pen.isKeyPressed('a')){
+				this.left_key_press();
 			}
-			else{
-				this.speed.horizontal = 0;
+			if(pen.isKeyPressed('d')){
+				this.right_key_press();
 			}
-		}
+			if(pen.isKeyPressed('w')){
+				this.up_key_press();
+			}
+			if (this.moving == false){
+				if (this.speed.horizontal >= 1 && this.speed.horizontal >=0.5){
+					
+				this.speed.horizontal = this.speed.horizontal*.5;
+				}
+				else{
+					this.speed.horizontal = 0;
+				}
+			}
 
 			
 		}
@@ -104,5 +98,9 @@ public class Player extends Fallable implements PlayerInterface{
 	}
 	public int bottom(){
 		return (int)location.y+40;
+	}
+	@Override
+	public int top() {
+		return (int)location.y;
 	}
 }
