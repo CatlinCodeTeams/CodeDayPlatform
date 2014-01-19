@@ -8,7 +8,7 @@ public abstract class Fallable {
 	public abstract int top();
 	public abstract Vector getVector();
 	public boolean falling=false;
-	public boolean connorFall(Hitable[] h){
+	public boolean connerFall(Hitable[] h){
 		for(Hitable e:h){
 			if(this.bottom()>=e.top()&& this.top()<e.bottom() && !(this.getLowerRight()<e.getTopLeft() || this.getLowerLeft()>e.getTopRight())){
 				return false;
@@ -46,5 +46,12 @@ public abstract class Fallable {
 			}
 		}
 		return v;	
+	}
+	public Vector connerFall2 (boolean falling) {
+		Vector v=this.getVector();
+		if (falling) {
+			v.add(new Vector(0,.1));
+		}
+		return v;
 	}
 }

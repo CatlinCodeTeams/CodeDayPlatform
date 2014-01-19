@@ -57,16 +57,17 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 			Point oldPosition = position;
 			Vector oldVelocity = velocity;
 			position.move(velocity);
-			velocity = gravitate (b);
+			falling = connerFall (b);
 			if (falling) {
 				position = oldPosition;
 				velocity = oldVelocity;
 				//velocity.horizontal = -1 * velocity.horizontal;
 				velocity.vertical -= 3;
 			}
+		} else {
+			velocity = gravitate (b);
+			position.move(velocity);
 		}
-		velocity = gravitate (b);
-		position.move(velocity);
 	}
 
 	public void draw(SimplestPen pen) {
