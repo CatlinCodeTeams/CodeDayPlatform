@@ -9,8 +9,8 @@ import java.io.File;
 import java.util.ArrayList;
 import plat.blocks.Block;
 import plat.player.Player;
-
 // import plat.xmltiles.ReadXML;
+
 public class ReadXML
 {
 	public ReadXML()
