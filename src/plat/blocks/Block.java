@@ -173,5 +173,9 @@ public class Block implements BlockInterface,Hitable{
 	public int top() {
 		return (int) location.y;
 	}
+	@Override
+	public int bottom() {
+		return (int)location.y+40;
+	}
 
 }

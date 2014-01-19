@@ -103,4 +103,8 @@ public class Player extends Fallable implements PlayerInterface{
 	public int bottom(){
 		return (int)location.y+40;
 	}
+	@Override
+	public int top() {
+		return (int)location.y;
+	}
 }
