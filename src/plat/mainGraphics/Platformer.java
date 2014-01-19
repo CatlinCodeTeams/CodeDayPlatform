@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import Basic_Enemy.Basic_Enemy;
+import plat.blocks.Block;
 import plat.interfaces.EntityInterface;
 import janus.engine.SimpleGraphics;
 import janus.engine.pens.SimplestPen;
@@ -17,15 +18,15 @@ public class Platformer extends SimpleGraphics{
 	
 	Random rand = new Random();
 	
-	ArrayList<EntityInterface> enemy_list;
+	ArrayList<EntityInterface> enemy_list = new ArrayList<EntityInterface>();
+	ArrayList<Block> block_list;
 	
 
 	@Override
 	public void start(SimplestPen pen) {
 		
-		pen.setBackground(new Color(50,200,255));
-		
-		enemy_list = new ArrayList<EntityInterface>();
+		pen.setBackground(new Color(25,150,255));
+
 		
 		level=1;
 		for (int i = 0; i<10; i++){
