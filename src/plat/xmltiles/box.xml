@@ -46,13 +46,12 @@
 	<tile x="11" y="8" type="0" />
 	<tile x="11" y="9" type="0" />
 	<tile x="11" y="10" type="0" />
-	<tile x="0" y="20" type="0" />
-	<tile x="1" y="20" type="0" />
-	<tile x="2" y="20" type="0" />
-	<tile x="3" y="20" type="0" />
-	<tile x="4" y="20" type="0" />
-	<tile x="5" y="20" type="0" />
-	<tile x="6" y="20" type="0" />
-	<tile x="7" y="20" type="0" />
-	<tile x="8" y="20" type="0" />
+	
+	<tile x="12" y="6" type="0" />
+	<tile x="13" y="6" type="0" />
+	<tile x="14" y="6" type="0" />
+	<tile x="16" y="8" type="0" />
+	<tile x="17" y="8" type="0" />
+	<tile x="18" y="8" type="0" />
+
 </map>
