@@ -18,9 +18,10 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	
 	public Conner_Enemy (int xStart, int yStart) {
 		position = new Point (xStart, yStart);
-		velocity = new Vector (0, 0);
+		velocity = new Vector (.4, 0);
 		height = 40;
 		width = 40;
+		falling = true;
 	}
 	public Point get_Point() {
 		return position;
@@ -46,24 +47,39 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	}
 	
 	public int bottom() {
-		return (int) position.y - height;
+		return (int) position.y + height;
 	}
 
 	public void update(SimplestPen pen, ArrayList<Block> blockList) {
 		Block[] b = new Block[blockList.size()];
 		blockList.toArray(b);
-		velocity = gravitate (b);
+		if (!falling) {
+			Point oldPosition = position;
+			Vector oldVelocity = velocity;
+			position.move(velocity);
+			falling = connerFall (b);
+			if (falling) {
+				position = oldPosition;
+				velocity = oldVelocity;
+				//velocity.horizontal = -1 * velocity.horizontal;
+				velocity.vertical -= 3;
+			}
+		} else {
+			velocity = gravitate (b);
+			position.move(velocity);
+		}
 	}
 
 	public void draw(SimplestPen pen) {
-		pen.setColor(new Color(255, 255, 255));
-		pen.fillCircle((int) this.position.x, (int) this.position.y,
+		pen.setColor(new Color(0, 255, 255));
+		pen.fillCircle((int) this.position.x, (int) this.position.y + height/2,
 		20);
 	}
 	@Override
 	public int top() {
 		return (int) position.y;
 	}
+<<<<<<< HEAD
 	@Override
 	public int lastLowerLeft() {
 		return 0;
@@ -87,3 +103,6 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 		
 	}
 }
+=======
+}
+>>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git
