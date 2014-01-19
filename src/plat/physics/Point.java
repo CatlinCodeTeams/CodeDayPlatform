@@ -1,6 +1,5 @@
 package plat.physics;
 
-import sun.applet.Main;
 
 
 public class Point {

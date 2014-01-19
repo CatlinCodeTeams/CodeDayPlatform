@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import plat.blocks.Block;
 import plat.enemies.Basic_Enemy;
 import plat.interfaces.EntityInterface;
+import plat.player.Player;
 import plat.resource.sprites.ImgRegulator;
 import janus.engine.SimpleGraphics;
 import janus.engine.pens.SimplestPen;
@@ -26,7 +27,7 @@ public class Platformer extends SimpleGraphics{
 	
 	ArrayList<EntityInterface> enemy_list = new ArrayList<EntityInterface>();
 	ArrayList<Block> block_list = new ArrayList<Block>();
-	
+	Player player;
 
 	private void loadImage(String name){
 		try {
@@ -43,7 +44,7 @@ public class Platformer extends SimpleGraphics{
 		pen.setBackground(new Color(25,150,255));
 		
 		loadImage("main.png");
-		
+		player = new Player(100,100);
 		level=1;
 		for (int i = 0; i<10; i++){
 			enemy_list.add(new Basic_Enemy(pen, 400, 300));
@@ -65,7 +66,7 @@ public class Platformer extends SimpleGraphics{
 		for (Block b: block_list){
 			b.update(pen);
 		}
-		
+		player.update(pen);
 	}
 	@Override
 	public void draw(SimplestPen pen) {
@@ -76,6 +77,7 @@ public class Platformer extends SimpleGraphics{
 		for (Block b: block_list){
 			b.draw(pen);
 		}
+		player.draw(pen);
 
 
 }}
