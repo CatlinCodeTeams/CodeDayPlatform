@@ -24,9 +24,7 @@ public class Player implements PlayerInterface {
 		this.location.move(this.speed);
 	}
 	public void draw(SimplestPen pen) {
-
-		pen.setColor(new Color(0,0,0));
-		pen.drawRectangle((int)this.location.x, (int)this.location.y, (int)this.width,(int)this.height);
+		pen.drawImage("main.png",(int)this.location.x, (int)this.location.y,40,40);
 		
 	}
 	@Override
@@ -45,6 +43,6 @@ public class Player implements PlayerInterface {
 	}
 	@Override
 	public void down_key_pess() {
-		
+		this.speed.add(new Vector(0,5));
 	}
 }
