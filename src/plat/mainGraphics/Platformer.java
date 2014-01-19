@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 import plat.blocks.Block;
 import plat.enemies.Basic_Enemy;
 import plat.interfaces.EntityInterface;
+import plat.player.Player;
 import plat.resource.sprites.ImgRegulator;
 
 public class Platformer extends SimpleGraphics {
@@ -26,6 +27,7 @@ public class Platformer extends SimpleGraphics {
 
 	ArrayList<EntityInterface> enemy_list = new ArrayList<EntityInterface>();
 	ArrayList<Block> block_list = new ArrayList<Block>();
+	Player player;
 
 	private void loadImage(String name) {
 		try {
@@ -64,10 +66,12 @@ public class Platformer extends SimpleGraphics {
 		for (Block b : block_list) {
 			b.update(pen);
 		}
+		player.update(pen);
 		
 		if (pen.isKeyPressed('r')){
 			pen.restart();
 		}
+
 	}
 
 	@Override
@@ -79,6 +83,7 @@ public class Platformer extends SimpleGraphics {
 		for (Block b : block_list) {
 			b.draw(pen);
 		}
+		player.draw(pen);
 
 	}
 }
