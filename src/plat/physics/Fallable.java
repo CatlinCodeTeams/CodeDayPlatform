@@ -8,6 +8,14 @@ public abstract class Fallable {
 	public abstract int top();
 	public abstract Vector getVector();
 	public boolean falling=false;
+	public boolean connorFall(Hitable[] h){
+		for(Hitable e:h){
+			if(this.bottom()>=e.top()&& this.top()<e.bottom() && !(this.getLowerRight()<e.getTopLeft() || this.getLowerLeft()>e.getTopRight())){
+				return false;
+			}
+		}
+		return true;
+	}
 	public Vector gravitate(Hitable[] h){
 		Vector v=this.getVector();
 		for(Hitable e:h){
@@ -27,13 +35,13 @@ public abstract class Fallable {
 		Vector v=this.getVector();
 		for(Hitable e:h){
 			if(this.getLowerLeft()>e.getTopLeft()){
-				if(e.top()>=this.bottom() && e.top()<=this.top()){
-					v.horizontal=-v.horizontal+.1;
+				if(e.top()<=this.bottom() && e.top()>=this.top()){
+					v.horizontal=-10;
 				}
 			}
-			if(this.getLowerRight()>e.getTopRight()){
-				if(e.top()>=this.bottom() && e.top()<=this.top()){
-					v.horizontal=-v.horizontal+.1;
+			if(this.getLowerRight()<e.getTopRight()){
+				if(e.top()<=this.bottom() && e.top()>=this.top()){
+					v.horizontal=10;
 				}
 			}
 		}
