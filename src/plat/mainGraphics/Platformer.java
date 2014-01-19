@@ -15,6 +15,7 @@ import plat.enemies.*;
 import plat.interfaces.EntityInterface;
 import plat.player.Player;
 import plat.resource.sprites.ImgRegulator;
+import plat.shapes.Pinwheel;
 import plat.xmltiles.ReadXML;
 
 public class Platformer extends SimpleGraphics {
@@ -30,6 +31,8 @@ public class Platformer extends SimpleGraphics {
 	ArrayList<EntityInterface> enemy_list;
 	ArrayList<Block> block_list;
 	Player player;
+	
+	Pinwheel pin;
 
 	private void loadImage(String name) {
 		try {
@@ -43,6 +46,11 @@ public class Platformer extends SimpleGraphics {
 
 	@Override
 	public void start(SimplestPen pen) {
+		ArrayList<Color> color_list= new ArrayList<Color>();
+		color_list.add(new Color(255,255,255));
+		color_list.add(new Color(0,0,100));
+		pin = new Pinwheel(10,100, 1, 100, 100, color_list, pen);
+		
 		enemy_list = new ArrayList<EntityInterface>();
 		block_list = new ArrayList<Block>();
 		load_images();
@@ -94,6 +102,9 @@ public class Platformer extends SimpleGraphics {
 	
 	@Override
 	public void update(SimplestPen pen) {
+		
+		pin.update(pen);
+		
 		for (EntityInterface e : enemy_list) {
 			e.update(pen, block_list);
 		}
@@ -116,6 +127,8 @@ public class Platformer extends SimpleGraphics {
 
 	@Override
 	public void draw(SimplestPen pen) {
+		
+		pin.draw(pen);
 
 		for (EntityInterface e : enemy_list) {
 			e.draw(pen);
