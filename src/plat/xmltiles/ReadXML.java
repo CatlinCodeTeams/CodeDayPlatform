@@ -36,7 +36,7 @@ public class ReadXML
 					int x = Integer.parseInt( eElement.getAttribute( "x" ) );
 					int y = Integer.parseInt( eElement.getAttribute( "y" ) );
 					int type = Integer.parseInt( eElement.getAttribute( "type" ) );
-					// blockList.add(, element);
+					// blockList.add(x, y, type);
 					
 					System.out.println("The tile type is: " + eElement.getAttribute("type"));
 				}
