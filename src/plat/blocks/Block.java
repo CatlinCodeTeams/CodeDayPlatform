@@ -5,10 +5,11 @@ import java.util.ArrayList;
 
 import janus.engine.pens.SimplestPen;
 import plat.interfaces.BlockInterface;
+import plat.physics.Hitable;
 import plat.physics.Point;
 import plat.physics.Vector;
 
-public class Block implements BlockInterface{
+public class Block implements BlockInterface,Hitable{
 
 	Vector speed;
 	Point location;
@@ -111,6 +112,21 @@ public class Block implements BlockInterface{
 			}	
 		}
 		
+	}
+
+	@Override
+	public int getTopLeft() {
+		return (int)location.x;
+	}
+
+	@Override
+	public int getTopRight() {
+		return (int)location.y;
+	}
+
+	@Override
+	public int height() {
+		return 40;
 	}
 
 }
