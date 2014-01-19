@@ -27,7 +27,6 @@ public class Player extends Fallable implements PlayerInterface{
 		height = 20;
 	}
 	public void update(SimplestPen pen){
-		
 		this.location.move(this.speed);
 		this.moving = false;
 		if (this.falling == false){
@@ -65,25 +64,30 @@ public class Player extends Fallable implements PlayerInterface{
 	}
 	@Override
 	public void left_key_press() {
+		if (this.falling == false){
 		this.speed.add(new Vector(-5,0));
-		this.moving = true;
+		this.moving = true;}
 		
 	}
 	@Override
 	public void right_key_press() {
+		if (this.falling == false){
 		this.speed.add(new Vector(5,0));
-		this.moving = true;
+		this.moving = true;}
 	}
 	@Override
 	public void up_key_press() {
-		this.speed.add(new Vector(0,-5));
-		this.moving = true;
+		if (this.falling == false){
+		this.speed.add(new Vector(0,-1));
+		this.falling = true;
+		this.moving = true;}
 		
 	}
 	@Override
 	public void down_key_pess() {
+		if (this.falling == false){
 		this.speed.add(new Vector(0,5));
-		this.moving = true;
+		this.moving = true;}
 	}
 
 	@Override
