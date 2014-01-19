@@ -1,9 +1,11 @@
 package plat.enemies;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Random;
 
 import janus.engine.pens.SimplestPen;
+import plat.blocks.Block;
 import plat.interfaces.EntityInterface;
 import plat.physics.Point;
 import plat.physics.Vector;
@@ -39,7 +41,7 @@ public class Basic_Enemy implements EntityInterface {
 	}
 
 	@Override
-	public void update(SimplestPen pen) {
+	public void update(SimplestPen pen, ArrayList<Block> block_list) {
 
 		this.location.move(this.speed);
 
