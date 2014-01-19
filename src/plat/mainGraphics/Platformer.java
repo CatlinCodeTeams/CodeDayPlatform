@@ -18,7 +18,7 @@ import plat.resource.sprites.ImgRegulator;
 
 public class Platformer extends SimpleGraphics {
 	public static int level;
-
+	int fps;
 	public Platformer() {
 		super(800, 600, "Plat");
 		this.endProgramOnClose=true;
@@ -101,6 +101,8 @@ public class Platformer extends SimpleGraphics {
 		Block[] b=new Block[block_list.size()];
 		block_list.toArray(b);
 		player.gravitate(b);
+		fps = pen.getActualFrameRate();
+		
 	}
 
 	@Override
@@ -113,6 +115,7 @@ public class Platformer extends SimpleGraphics {
 			b.draw(pen);
 		}
 		player.draw(pen);
+		pen.drawString(fps+"",20,40, "comic sans", 30);
 
 	}
 }
