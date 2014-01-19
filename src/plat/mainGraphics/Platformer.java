@@ -53,7 +53,7 @@ public class Platformer extends SimpleGraphics {
 		for (int i = 0; i < 10; i++) {
 			enemy_list.add(new Basic_Enemy(pen, 400, 300));
 
-			block_list.add(new Block((40 * i)+80, 300, block_list));
+			block_list.add(new Block((40 * i)+80, 300, 0, block_list));
 
 		}
 
