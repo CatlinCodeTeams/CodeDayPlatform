@@ -41,6 +41,7 @@ public class ReadXML
 					System.out.println("The tile type is: " + eElement.getAttribute("type"));
 				}
 			}
+			for (int n = 0; n < blockList; )
 		}
 		
 	    catch (Exception e) {
