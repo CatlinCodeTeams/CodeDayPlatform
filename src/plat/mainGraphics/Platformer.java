@@ -56,6 +56,14 @@ public class Platformer extends SimpleGraphics {
 			block_list.add(new Block((40 * i)+80, 300, 0, block_list));
 
 		}
+		
+		for (int i=0; i<3; i++){
+			block_list.add(new Block(160+(i*40), 340, 0, block_list));
+		}
+		
+		for (Block b: block_list){
+			b.render(block_list);
+		}
 
 	}
 
