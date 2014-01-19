@@ -14,6 +14,7 @@ public class Player extends Fallable implements PlayerInterface{
 	int health;
 	boolean in_air;
 	boolean moving;
+	String pic;
 	
 	public Player(int x, int y){
 		location = new Point(x,y);
@@ -21,6 +22,7 @@ public class Player extends Fallable implements PlayerInterface{
 		moving = false;
 		width = 10;
 		height = 20;
+		pic = "player_front.png";
 	}
 	public void update(SimplestPen pen){
 		
@@ -29,12 +31,15 @@ public class Player extends Fallable implements PlayerInterface{
 		if (this.falling == false){
 			if(pen.isKeyPressed('a')){
 				this.left_key_press();
+				this.pic = "player_left.png";
 			}
 			if(pen.isKeyPressed('d')){
 				this.right_key_press();
+				this.pic = "player_right.png";
 			}
 			if(pen.isKeyPressed('w')){
 				this.up_key_press();
+				this.pic = "player_jumping.png";
 			}
 			if (this.moving == false){
 				if (this.speed.horizontal >= 1 && this.speed.horizontal >=0.5){
@@ -43,6 +48,7 @@ public class Player extends Fallable implements PlayerInterface{
 				}
 				else{
 					this.speed.horizontal = 0;
+					this.pic = "player_front.png";
 				}
 			}
 
@@ -56,7 +62,7 @@ public class Player extends Fallable implements PlayerInterface{
 		}
 	}
 	public void draw(SimplestPen pen) {
-		pen.drawImage("player_front.png",(int)this.location.x, (int)this.location.y,40,40);
+		pen.drawImage((String)this.pic,(int)this.location.x, (int)this.location.y,40,40);
 		
 	}
 	@Override
