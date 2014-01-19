@@ -1,6 +1,6 @@
 package plat.player;
 
-public interface PlayerInterface extends plat.interfaces.EntityInterface{
+public interface PlayerInterface{
 
 	public void left_key_press();
 
