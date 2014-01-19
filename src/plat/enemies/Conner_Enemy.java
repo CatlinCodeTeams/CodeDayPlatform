@@ -18,9 +18,10 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	
 	public Conner_Enemy (int xStart, int yStart) {
 		position = new Point (xStart, yStart);
-		velocity = new Vector (0, 0);
+		velocity = new Vector (.5, 0);
 		height = 40;
 		width = 40;
+		falling = true;
 	}
 	public Point get_Point() {
 		return position;
@@ -52,11 +53,19 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	public void update(SimplestPen pen, ArrayList<Block> blockList) {
 		Block[] b = new Block[blockList.size()];
 		blockList.toArray(b);
-		velocity = gravitate (b);
-		for (Block block : b) {
-			if (getLowerRight () >= block.getTopLeft() && getLowerRight () <= block.getTopRight()) {
-				
+		if (!falling) {
+			Point oldPosition = position;
+			Vector oldVelocity = velocity;
+			position.move(velocity);
+			velocity = gravitate (b);
+			if (falling) {
+				position = oldPosition;
+				velocity = oldVelocity;
+				velocity.horizontal = -1 * velocity.horizontal;
 			}
+		} else {
+			velocity = gravitate (b);
+			position.move(velocity);
 		}
 		position.move(velocity);
 	}
