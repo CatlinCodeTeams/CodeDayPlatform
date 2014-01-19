@@ -80,7 +80,8 @@ public class SimplestPen {
 		if (rotation != 0) {
 			img = ImageRotator.getRotatedImage(img, rotation);
 		}
-		simplePen.drawImage(img.getScaledInstance(width, height, 0), x, y, width, height, null);
+		simplePen.drawImage(img.getScaledInstance(width, height, 0), x, y,
+				width, height, null);
 	}
 
 	public void drawLine(int startX, int startY, int endX, int endY) {
@@ -93,7 +94,7 @@ public class SimplestPen {
 
 	public void drawLine(int startX, int startY, int endX, int endY,
 			int thickness) {
-		Stroke s=simplePen.pen.getStroke();
+		Stroke s = simplePen.pen.getStroke();
 		simplePen.pen.setStroke(new BasicStroke(thickness));
 		simplePen.pen.setStroke(s);
 	}
@@ -175,7 +176,7 @@ public class SimplestPen {
 	}
 
 	public int getActualFrameRate() {
-		return (int) (((System.nanoTime()-window.startTime)/1e9)/window.passedFrames);
+		return (int) (((System.nanoTime() - window.startTime) / 1e9) / window.passedFrames);
 	}
 
 	public Point getCameraPosition() {
@@ -209,6 +210,7 @@ public class SimplestPen {
 		}
 		return tbr;
 	}
+
 	public boolean isKeyPressed(int i) {
 		final int code = i;
 		boolean tbr = false;
@@ -292,7 +294,6 @@ public class SimplestPen {
 		}
 	}
 
-
 	// Object related functions
 	public void restart() {
 		window.start(this);
@@ -310,17 +311,16 @@ public class SimplestPen {
 		window.xOff = x - window.panelWidth / 2;
 		window.yOff = y - window.panelHeight / 2;
 	}
-	
-	public void pauseCamera(){
-		if(!window.camPause){
-			window.xsOff=window.xOff;
-			window.ysOff=window.yOff;
-			window.camPause=true;
+
+	public void pauseCamera() {
+		if (!window.camPause) {
+			window.xsOff = window.xOff;
+			window.ysOff = window.yOff;
+			window.camPause = true;
 			window.xOff = window.panelWidth / 2;
 			window.yOff = window.panelHeight / 2;
-		}
-		else{
-			window.camPause=false;
+		} else {
+			window.camPause = false;
 			window.xOff = window.xsOff;
 			window.yOff = window.ysOff;
 		}
