@@ -37,6 +37,7 @@ public class ReadXML
 					int y = Integer.parseInt( eElement.getAttribute( "y" ) );
 					int type = Integer.parseInt( eElement.getAttribute( "type" ) );
 					blockList.add(new Block(x, y, type, blockList));
+					
 				}
 			}
 			for (int n = 0; n < blockList.size(); n++)

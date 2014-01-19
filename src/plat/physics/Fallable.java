@@ -11,7 +11,9 @@ public abstract class Fallable {
 		Vector v=this.getVector();
 		for(Hitable e:h){
 			if(this.bottom()>=e.top() && !(this.getLowerRight()<e.getTopLeft() || this.getLowerLeft()>e.getTopRight())){
-				v.vertical=0;
+				if(v.vertical>0){
+					v.vertical=0;
+				}
 				falling=false;
 				return v;
 			}
