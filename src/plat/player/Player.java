@@ -24,7 +24,7 @@ public class Player implements PlayerInterface {
 		this.location.move(this.speed);
 	}
 	public void draw(SimplestPen pen) {
-		pen.drawImage("main.png",(int)this.location.x, (int)this.location.y,40,40);
+		pen.drawImage("player_front.png",(int)this.location.x, (int)this.location.y,40,40);
 		
 	}
 	@Override
