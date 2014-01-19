@@ -239,14 +239,14 @@ public abstract class SimpleGraphics implements SimpleGraphicalInterface {
 	public final HashMap<Integer, Boolean> ispresed = new HashMap<Integer, Boolean>();
 	public final JFrame mainFrame;
 	public boolean mousePressed = false;
-	public int passedFrames=0;
+	public int passedFrames = 0;
 	public int panelHeight;
 	public int panelWidth;
 	public HashMap<String, AudioInputStream> sounds = new HashMap<String, AudioInputStream>();
 	public final long startTime = System.nanoTime();
 	public int xOff, yOff;
 	public int xsOff, ysOff;
-	public boolean camPause=false;
+	public boolean camPause = false;
 	protected final GamePanel gamePanel;
 	protected final SimplestPen myPen = new SimplestPen(new SimplePen(null),
 			this);

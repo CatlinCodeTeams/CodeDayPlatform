@@ -5,7 +5,7 @@ import janus.engine.pens.SimplestPen;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-public interface SimpleGraphicalInterface{
+public interface SimpleGraphicalInterface {
 
 	public void draw(SimplestPen pen);
 
