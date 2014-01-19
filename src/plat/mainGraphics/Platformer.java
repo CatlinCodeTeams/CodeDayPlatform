@@ -40,9 +40,9 @@ public class Platformer extends SimpleGraphics{
 	@Override
 	public void start(SimplestPen pen) {
 		
-		pen.setBackground(new Color(25,150,255));
+		load_images();
 		
-		loadImage("main.png");
+		pen.setBackground(new Color(25,150,255));
 		
 		level=1;
 		for (int i = 0; i<10; i++){
@@ -55,6 +55,20 @@ public class Platformer extends SimpleGraphics{
 		
 	}
 
+	
+	private void load_images(){
+		loadImage("main.png");
+		loadImage("grass_bottom.png");
+		loadImage("grass_corner.png");
+		loadImage("grass_side1.png");
+		loadImage("grass_side2.png");
+		loadImage("grass_top.png");
+		loadImage("player_front.png");
+		loadImage("player_jumping.png");
+		loadImage("player_left.png");
+		loadImage("player_right.png");
+	}
+	
 	@Override
 	public void update(SimplestPen pen) {
 		
