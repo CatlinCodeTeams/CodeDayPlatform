@@ -50,7 +50,7 @@ public class ReadXML
 
 					int x = Integer.parseInt( eElement.getAttribute( "x" ) );
 					int y = Integer.parseInt( eElement.getAttribute( "y" ) );
-					plr = new Player(x*40, y*40);2
+					plr = new Player(x*40, y*40);
 					
 				}
 			}
