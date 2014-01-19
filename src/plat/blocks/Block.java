@@ -55,10 +55,10 @@ public class Block implements BlockInterface{
 			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 90);
 		if (neighbors[3]==false)
 			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  0);
-		if (neighbors[5]==false)
-			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 180);
-		if (neighbors[7]==false)
-			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 270);
+		if (neighbors[7]==false){
+			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  270);
+			pen.drawImage("grass_bottom.png", (int)this.location.x, (int)this.location.y+40, 40, 40,  0);
+		}
 		
 	}
 
@@ -79,18 +79,22 @@ public class Block implements BlockInterface{
 				{
 					neighbors[2] = true;
 				}
+				
 				if ((b.location.x == this.location.x-40)&&(b.location.y == this.location.y))
 				{
 					neighbors[3] = true;
 				}
+				
 				if ((b.location.x == this.location.x)&&(b.location.y == this.location.y))
 				{
 					neighbors[4] = true;
 				}
+				
 				if ((b.location.x == this.location.x+40)&&(b.location.y == this.location.y))
 				{
 					neighbors[5] = true;
 				}
+				
 				if ((b.location.x == this.location.x-40)&&(b.location.y == this.location.y+40))
 				{
 					neighbors[6] = true;
