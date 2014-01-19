@@ -43,6 +43,10 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 	public Vector getVector() {
 		return velocity;
 	}
+	
+	public int bottom() {
+		return (int) position.y - height;
+	}
 
 	public void update(SimplestPen pen, ArrayList<Block> blockList) {
 		Block[] b = new Block[blockList.size()];
