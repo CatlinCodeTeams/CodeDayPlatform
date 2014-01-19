@@ -65,7 +65,7 @@ public class Block implements BlockInterface,Hitable{
 		
 		if (neighbors[5]==false){
 			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  180);
-			pen.drawImage("grass_side1.png", (int)this.location.x, (int)this.location.y, 40, 40,  180);
+			pen.drawImage("grass_side2.png", (int)this.location.x+40, (int)this.location.y, 40, 40,  0);
 		}
 		if (neighbors[1]==false){
 			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40, 90);
@@ -74,7 +74,7 @@ public class Block implements BlockInterface,Hitable{
 		if (neighbors[3]==false)
 		{
 			pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40,  0);
-			pen.drawImage("grass_side1.png", (int)this.location.x-40, (int)this.location.y, 40, 40,  180);
+			pen.drawImage("grass_side2.png", (int)this.location.x-40, (int)this.location.y, 40, 40,  180);
 			
 		}
 			
