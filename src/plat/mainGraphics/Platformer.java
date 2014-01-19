@@ -27,11 +27,7 @@ public class Platformer extends SimpleGraphics {
 
 	ArrayList<EntityInterface> enemy_list = new ArrayList<EntityInterface>();
 	ArrayList<Block> block_list = new ArrayList<Block>();
-<<<<<<< HEAD
 	Player player;
-=======
->>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git
-
 	private void loadImage(String name) {
 		try {
 			this.imgs.put(name,
@@ -48,15 +44,9 @@ public class Platformer extends SimpleGraphics {
 		pen.setBackground(new Color(25, 150, 255));
 
 		loadImage("main.png");
-<<<<<<< HEAD
 		player = new Player(100,100);
 		level=1;
-		for (int i = 0; i<10; i++){
-=======
-
-		level = 1;
 		for (int i = 0; i < 10; i++) {
->>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git
 			enemy_list.add(new Basic_Enemy(pen, 400, 300));
 
 			block_list.add(new Block(pen, 40 * i, 0));
@@ -75,14 +65,11 @@ public class Platformer extends SimpleGraphics {
 		for (Block b : block_list) {
 			b.update(pen);
 		}
-<<<<<<< HEAD
 		player.update(pen);
-=======
 		
 		if (pen.isKeyPressed('r')){
 			pen.restart();
 		}
->>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git
 	}
 
 	@Override
