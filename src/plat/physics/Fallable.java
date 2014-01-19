@@ -9,7 +9,7 @@ public abstract class Fallable {
 	public Vector gravitate(Hitable[] h){
 		Vector v=this.getVector();
 		for(Hitable e:h){
-			if(this.bottom()>=e.top() && (this.getLowerLeft()>e.getTopLeft() || this.getLowerRight()<e.getTopRight())){
+			if(this.bottom()>=e.top() && !(this.getLowerRight()<e.getTopLeft() || this.getLowerLeft()>e.getTopRight())){
 				v.vertical=0;
 				return v;
 			}
