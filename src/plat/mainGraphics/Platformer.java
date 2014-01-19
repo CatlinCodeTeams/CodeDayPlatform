@@ -66,6 +66,10 @@ public class Platformer extends SimpleGraphics{
 			b.update(pen);
 		}
 		
+		if (pen.isKeyPressed('r')){
+			start(pen);
+		}
+		
 	}
 	@Override
 	public void draw(SimplestPen pen) {
