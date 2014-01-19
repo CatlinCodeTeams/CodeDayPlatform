@@ -7,7 +7,7 @@ import plat.physics.Vector;
 import plat.physics.Fallable;
 import plat.interfaces.EntityInterface;
 
-public class Player extends Fallable implements EntityInterface{
+public class Player extends Fallable implements PlayerInterface{
 	Point location;
 	Vector speed;
 	int width;
