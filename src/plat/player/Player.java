@@ -1,12 +1,12 @@
-<<<<<<< HEAD
 package plat.player;
 import janus.engine.pens.SimplestPen;
 import java.awt.Color;
 
 import plat.physics.Point;
 import plat.physics.Vector;
+import plat.physics.Fallable;;
 
-public class Player implements PlayerInterface {
+public class Player extends Fallable implements PlayerInterface {
 	Point location;
 	Vector speed;
 	int width;
@@ -33,19 +33,21 @@ public class Player implements PlayerInterface {
 			this.right_key_press();
 		}
 		if (this.moving == false){
-			if (this.speed.length() >= 1 && this.speed.length() >=0.5){
+			if (this.speed.horizontal >= 1 && this.speed.horizontal >=0.5){
 				
-			this.speed.multiply(.5);
+			this.speed.horizontal = this.speed.horizontal*.5;
 			}
 			else{
-				this.speed.multiply(0);
+				this.speed.horizontal = 0;
 			}
 
 			
 		}
-		if (this.speed.length()>5.0){
-			this.speed.normalize();
-			this.speed.multiply(5.0);
+		if (this.speed.horizontal>5.0){
+			this.speed.horizontal = 5;
+		}
+		else if (this.speed.horizontal < -5){
+			this.speed.horizontal = -5;
 		}
 	}
 	public void draw(SimplestPen pen) {
@@ -74,59 +76,7 @@ public class Player implements PlayerInterface {
 		this.speed.add(new Vector(0,5));
 		this.moving = true;
 	}
-}
-=======
 
-package plat.player;
-import janus.engine.pens.SimplestPen;
-
-import java.awt.Color;
-
-import plat.physics.Fallable;
-import plat.physics.Point;
-import plat.physics.Vector;
-
-public class Player extends Fallable implements PlayerInterface {
-	Point location;
-	Vector speed;
-	int width;
-	int height;
-	int health;
-	boolean in_air;
-	
-	public Player(int x, int y){
-		location = new Point(x,y);
-		speed = new Vector(0,0);
-		width = 10;
-		height = 20;
-	}
-	public void update(SimplestPen pen){
-		this.location.move(this.speed);
-	}
-	public void draw(SimplestPen pen) {
-
-		pen.setColor(new Color(0,0,0));
-		pen.drawRectangle((int)this.location.x, (int)this.location.y, (int)this.width,(int)this.height);
-		
-	}
-	@Override
-	public void left_key_press() {
-		this.speed.add(new Vector(-5,0));
-		
-	}
-	@Override
-	public void right_key_press() {
-		this.speed.add(new Vector(5,0));
-	}
-	@Override
-	public void up_key_press() {
-		this.speed.add(new Vector(0,-5));
-		
-	}
-	@Override
-	public void down_key_pess() {
-		
-	}
 	@Override
 	public int getLowerLeft() {
 		return (int) location.getIntX();
@@ -141,8 +91,9 @@ public class Player extends Fallable implements PlayerInterface {
 	}
 	@Override
 	public Vector getVector() {
-		return speed;
+		return this.speed;
+	}
+	public int bottom(){
+		return (int)location.y-40;
 	}
 }
->>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git
-
