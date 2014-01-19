@@ -154,4 +154,9 @@ public class Block implements BlockInterface,Hitable{
 		return 40;
 	}
 
+	@Override
+	public int top() {
+		return (int) location.y;
+	}
+
 }
