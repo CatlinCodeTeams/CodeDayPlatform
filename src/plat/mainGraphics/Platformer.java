@@ -67,7 +67,7 @@ public class Platformer extends SimpleGraphics{
 		}
 		
 		if (pen.isKeyPressed('r')){
-			start(pen);
+			pen.restart();
 		}
 		
 	}
