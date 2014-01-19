@@ -64,10 +64,8 @@ public class Conner_Enemy extends Fallable implements EntityInterface {
 				//velocity.horizontal = -1 * velocity.horizontal;
 				velocity.vertical -= 3;
 			}
-		} else {
-			velocity = gravitate (b);
-			position.move(velocity);
 		}
+		velocity = gravitate (b);
 		position.move(velocity);
 	}
 
