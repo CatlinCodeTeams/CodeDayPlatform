@@ -7,18 +7,18 @@ import plat.interfaces.*;
 import plat.physics.*;
 import plat.blocks.*;
 import janus.engine.pens.SimplestPen;
-import janus.engine.pens.SimplestPen.*;
 
 //position is at the top left
 
-class Conner_Enemy extends Fallable implements EntityInterface {
+public class Conner_Enemy extends Fallable implements EntityInterface {
 	Point position;
 	Vector velocity;
 	int height;
 	int width;
 	
-	Conner_Enemy (int xStart, int yStart) {
+	public Conner_Enemy (int xStart, int yStart) {
 		position = new Point (xStart, yStart);
+		velocity = new Vector (0, 0);
 		height = 40;
 		width = 40;
 	}
@@ -43,6 +43,10 @@ class Conner_Enemy extends Fallable implements EntityInterface {
 	
 	public Vector getVector() {
 		return velocity;
+	}
+	
+	public int bottom() {
+		return (int) position.y - height;
 	}
 
 	public void update(SimplestPen pen, ArrayList<Block> blockList) {
