@@ -7,13 +7,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
 
-// import plat.xmltiles.ReadXML;
-public class ReadXML
-{
-	public ReadXML()
-	{
-		// CONSTRUCTOR
-	}
+public class ReadXML{
 	public static void Read( String XmlFile )
 	{		
 		try {

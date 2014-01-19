@@ -1,7 +1,10 @@
 package plat.physics;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/Others/CodeDayPlatform.git
 public class Point {
 
 	public double x;
