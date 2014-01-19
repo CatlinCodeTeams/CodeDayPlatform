@@ -62,6 +62,7 @@ public class Platformer extends SimpleGraphics {
 		loadImage("main.png");
 		loadImage("grass_bottom.png");
 		loadImage("grass_corner.png");
+		loadImage("grass_side.png");
 		loadImage("grass_side1.png");
 		loadImage("grass_side2.png");
 		loadImage("grass_top.png");

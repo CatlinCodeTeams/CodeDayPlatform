@@ -32,7 +32,9 @@ public class Block {
 
 	public void draw(SimplestPen pen){
 
-		pen.drawImage("main.png", (int)this.location.x, (int)this.location.y, 40, 40);
+		pen.drawImage("grass_side.png", (int)this.location.x, (int)this.location.y, 40, 40);
+		
+
 		
 	}
 
