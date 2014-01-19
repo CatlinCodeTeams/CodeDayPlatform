@@ -30,6 +30,7 @@ public class Player extends Fallable implements PlayerInterface{
 		
 		this.location.move(this.speed);
 		this.moving = false;
+		if (this.falling == false){
 		if(pen.isKeyPressed('a')){
 			this.left_key_press();
 		}
@@ -47,6 +48,7 @@ public class Player extends Fallable implements PlayerInterface{
 			else{
 				this.speed.horizontal = 0;
 			}
+		}
 
 			
 		}
