@@ -1,4 +1,5 @@
 package plat.player;
+import java.util.Random;
 
 
 import janus.engine.pens.SimplestPen;
